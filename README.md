@@ -69,7 +69,7 @@ two independent modules:
 ---
 
 ## 📂 Project Structure
-'''text
+```text
 Online-Police-System/
 │
 ├── User_panel/
@@ -101,4 +101,4 @@ Online-Police-System/
 │ ├── home.css ← Dashboard styles (cards, charts, modal)
 │ └── home.js ← Nav scroll, reject modal, bug validation
 │
-'''
+```
