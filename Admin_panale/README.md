@@ -65,14 +65,16 @@ A secure, modern web-based **Police Administration System** built with **PHP**, 
 ---
 
 ## 📂 Project Structure
+
+```text
 online-police-system/
 │
 ├── index.php                  # Admin login page
 ├── style.css                  # Login page styles
 ├── script.js                  # Login popup & redirect logic
-├── README.md                  # Project documentatio
+├── README.md                  # Project documentation
 │
-└── home/
+└── home_page/
     ├── home.php               # Main admin dashboard
     ├── home.css               # Dashboard styles
     └── home.js                # Dashboard interactivity
