@@ -10,6 +10,66 @@ two independent modules:
 | **Admin Panel** | Police administrators review, accept, or reject complaints | `Admin_panel/index.php` |
 
 ---
+REAL LIFE
+---------
+In many places, a citizen must travel to a police station, stand in a queue,
+fill a paper form, and sometimes wait hours just to report a stolen phone or
+a minor incident. Many people give up because it's too much hassle.
+
+This creates a chain of knock-on problems:
+
+  * People stop reporting minor crimes entirely (theft, harassment, fraud).
+  * Police records become incomplete, so crime statistics are inaccurate.
+  * Criminals get away because victims are too tired to file a complaint.
+  * People who work long hours, the elderly, and people with disabilities
+    are effectively locked out of the reporting system.
+  * Travel costs (bus fare, lost wages) discourage reporting small losses.
+  * Reports made verbally at a counter are sometimes mis-recorded or lost.
+
+HOW THIS PROJECT SOLVES IT
+--------------------------
+A citizen can register and file a report from a phone or laptop at home,
+24/7. The report is stored in the database, and the admin (police) sees it
+on their dashboard immediately.
+
+Concretely, the system provides:
+
+  1. ONLINE REGISTRATION (no visit needed)
+     File:     register/register.php
+     A citizen fills User ID, Name, Phone, Password, Confirm Password, and
+     uploads a profile image -- all from a browser. The data is inserted into
+     the `civilians_data` table. On success, a popup with confetti appears and
+     the citizen is redirected to the login page.
+
+  2. ONLINE LOGIN (secure access from anywhere)
+     File:     index.php
+     The citizen enters User ID + password. PHP checks it against the database
+     and starts a session on success. A welcome popup confirms login and
+     redirects to the dashboard.
+
+  3. REPORT IS STORED IN THE DATABASE (no paper form)
+     Table:    dairy_data
+     Each report (Full Name, Contact, District, Police Station, Type of
+     Report, Date/Time, Place, Subject, Description, etc.) is saved as a
+     structured row -- not a handwritten paper slip that can be lost.
+
+  4. ADMIN SEES IT IMMEDIATELY (no delay)
+     File:     home/home.php
+     The admin dashboard queries `dairy_data` on every page load, so any new
+     report appears on the "All Reports" grid as soon as the page refreshes.
+
+  5. WORKS ON ANY DEVICE, ANY TIME
+     File:     style.css, home.css (responsive media queries)
+     The layout adapts to phones, tablets, and desktops. The system runs
+     as long as the web server (Apache/XAMPP) is online -- 24/7.
+
+WHY THIS MATTERS IN REAL LIFE
+-----------------------------
+  * A stolen phone can be reported at 11 PM from home.
+  * An elderly person can file a complaint without travelling.
+  * Police stations receive structured data (no handwriting to decipher).
+  * Crime statistics become complete and trustworthy.
+  * The barrier to reporting drops, so more crimes are actually reported.
 
 ## 📑 Table of Contents
 
