@@ -1,284 +1,441 @@
-🚓 Online Police System
-<div align="center">
-A secure, role-based web application that digitizes police complaint registration, tracking, and administration.
+# 🚓 Online Police System
 
-https://img.shields.io/badge/PHP-7.4%2B-777BB4?style=flat-square&logo=php&logoColor=white
-https://img.shields.io/badge/MySQL-8.0-4479A1?style=flat-square&logo=mysql&logoColor=white
-https://img.shields.io/badge/JavaScript-ES6-F7DF1E?style=flat-square&logo=javascript&logoColor=black
-https://img.shields.io/badge/CSS3-Custom-1572B6?style=flat-square&logo=css3&logoColor=white
-https://img.shields.io/badge/Apache-XAMPP-D22128?style=flat-square&logo=apache&logoColor=white
+<p align="center">
+  <b>A Digital Platform for Online Complaint Registration and Police Administration</b>
+  <br>
+  <br>
+  <img src="https://img.shields.io/badge/PHP-7.4%2B-777BB4?style=for-the-badge&logo=php&logoColor=white" />
+  <img src="https://img.shields.io/badge/MySQL-Database-4479A1?style=for-the-badge&logo=mysql&logoColor=white" />
+  <img src="https://img.shields.io/badge/HTML5-Frontend-E34F26?style=for-the-badge&logo=html5&logoColor=white" />
+  <img src="https://img.shields.io/badge/CSS3-Styling-1572B6?style=for-the-badge&logo=css3&logoColor=white" />
+  <img src="https://img.shields.io/badge/JavaScript-Interactive-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black" />
+</p>
 
-</div>
-📖 Overview
-The Online Police System is a full-stack web application split into two independent modules that work together:
+---
 
-Module	Who Uses It	Purpose	Entry Point
-🧑‍💼 User Panel	Citizens	Register, log in, and file complaints	User_panel/index.php
-👮 Admin Panel	Police Administrators	Review, accept, or reject complaints	Admin_panel/index.php
-🌍 Real-Life Problem It Solves
-🚨 The Problem
-"I have to physically go to the police station to file a complaint."
+## 📌 About the Project
 
-In many places, a citizen must travel to a police station, stand in a queue, fill a paper form, and sometimes wait hours just to report a stolen phone or a minor incident. Many people give up because it's too much hassle.
+**Online Police System** is a web-based application developed using PHP and MySQL to digitize the traditional police complaint registration and administration process.
 
-This creates a chain of knock-on problems:
+The system provides two independent modules:
 
-Impact	Description
-🚫	People stop reporting minor crimes entirely (theft, harassment, fraud)
-📉	Police records become incomplete, so crime statistics are inaccurate
-🏃	Criminals get away because victims are too tired to file a complaint
-🔒	People who work long hours, the elderly, and people with disabilities are effectively locked out of the reporting system
-💸	Travel costs (bus fare, lost wages) discourage reporting small losses
-📝	Reports made verbally at a counter are sometimes mis-recorded or lost
-✅ How This Project Solves It
-A citizen can register and file a report from a phone or laptop at home, 24/7. The report is stored in the database, and the admin (police) sees it on their dashboard immediately.
+| Module | Description | Entry Point |
+|:---|:---|:---|
+| 👤 User Panel | Citizens can register, log in, and submit complaints online. | `User_panel/index.php` |
+| 🛡️ Admin Panel | Administrators can review, accept, reject, and manage complaints. | `Admin_panel/index.php` |
 
-Concretely, the system provides:
+The main objective is to make complaint registration more accessible, reduce paperwork, and improve communication between citizens and police administration.
 
-1️⃣ Online Registration — No visit needed
-File: register/register.php
+---
 
-A citizen fills User ID, Name, Phone, Password, Confirm Password, and uploads a profile image — all from a browser. The data is inserted into the civilians_data table. On success, a popup with confetti appears and the citizen is redirected to the login page.
+## 🌍 Real-Life Problem
 
-2️⃣ Online Login — Secure access from anywhere
-File: index.php
+In traditional complaint registration systems, citizens often need to visit a police station, wait in queues, complete paperwork, and spend valuable time reporting incidents.
 
-The citizen enters User ID + password. PHP checks it against the database and starts a session on success. A welcome popup confirms login and redirects to the dashboard.
+This creates several challenges:
 
-3️⃣ Report Is Stored in the Database — No paper form
-Table: dairy_data
+- 📝 Time-consuming manual complaint registration.
+- 🚶 Unnecessary travel to police stations.
+- 📂 Difficulty maintaining and organizing paper records.
+- ⏳ Delays in reviewing and processing complaints.
+- ♿ Accessibility challenges for elderly and physically disabled citizens.
+- 📊 Difficulty analyzing complaint data and identifying crime patterns.
 
-Each report (Full Name, Contact, District, Police Station, Type of Report, Date/Time, Place, Subject, Description, etc.) is saved as a structured row — not a handwritten paper slip that can be lost.
+## 💡 How This Project Solves the Problem
 
-4️⃣ Admin Sees It Immediately — No delay
-File: home/home.php
+The Online Police System provides a digital platform where citizens can register and submit complaints through a web browser.
 
-The admin dashboard queries dairy_data on every page load, so any new report appears on the "All Reports" grid as soon as the page refreshes.
+### Key Solutions
 
-5️⃣ Works on Any Device, Any Time
-Files: style.css, home.css (responsive media queries)
+1. **Online Registration:** Citizens can create accounts without visiting a police station.
+2. **Secure Login:** Registered users can access their accounts through authentication.
+3. **Digital Complaint Submission:** Complaint information is stored in a structured MySQL database.
+4. **Centralized Administration:** Administrators can view and manage submitted complaints.
+5. **Complaint Status Management:** Administrators can accept or reject complaints.
+6. **Crime Analytics:** Dashboard charts help visualize complaint statistics by category and district.
+7. **Responsive Interface:** The application is designed for desktop, tablet, and mobile screens.
 
-The layout adapts to phones, tablets, and desktops. The system runs as long as the web server (Apache/XAMPP) is online — 24/7.
+> **Project Goal:** To make the complaint registration process more accessible, organized, and efficient through digital technology.
 
-💡 Why This Matters in Real Life
-Real-World Impact	What It Means
-🌙 11 PM reporting	A stolen phone can be reported at 11 PM from home
-👴 No travel barrier	An elderly person can file a complaint without travelling
-📊 Structured data	Police stations receive structured data (no handwriting to decipher)
-📈 Trustworthy stats	Crime statistics become complete and trustworthy
-🚪 Lower barrier	The barrier to reporting drops, so more crimes are actually reported
-📑 Table of Contents
-<details> <summary><strong>Click to expand</strong></summary>
-Features
+---
 
-Tech Stack
+## ✨ Features
 
-Project Structure
+### 👤 User Panel
 
-Database Setup
+- 🔐 Secure user login with session management.
+- 📝 User registration with profile image upload.
+- 👁️ Password visibility toggle.
+- ✅ Real-time password matching validation.
+- 🔒 Minimum 8-character password validation.
+- 🎉 Animated success and error notifications.
+- 📋 Online complaint registration.
+- 📱 Responsive user interface.
 
-Installation & Configuration
+### 🛡️ Admin Panel
 
-Running the Application
+- 🔐 Separate administrator login system.
+- 📊 Dashboard with complaint statistics.
+- 📁 View all submitted complaints.
+- ✔️ Accept submitted complaints.
+- ❌ Reject complaints with a rejection reason.
+- 📈 Crime statistics and analytics.
+- 📊 Category-wise and district-wise visualizations.
+- 🐞 Built-in bug reporting form.
+- 📱 Responsive sidebar navigation.
+- 🔄 Automatic page redirection after administrative actions.
 
-Module Walkthroughs
+---
 
-Default Credentials
+## 🛠️ Technology Stack
 
-Security Notes
+| Category | Technology |
+|:---|:---|
+| Backend | PHP 7.4+ / PHP 8.x |
+| Database | MySQL / MariaDB |
+| Frontend | HTML5 |
+| Styling | CSS3 |
+| Client-side Programming | Vanilla JavaScript |
+| Icons | Font Awesome 6 |
+| Fonts | Google Fonts (Inter) |
+| Local Server | Apache |
+| Development Environment | XAMPP / WAMP |
 
-Known Limitations & Roadmap
+**Architecture:** Procedural PHP with MySQLi. No PHP frameworks or Composer dependencies are required.
 
-Troubleshooting
+---
 
-Credits
+## 📂 Project Structure
 
-</details>
-✨ Features
-🧑‍💼 User Panel
-Feature	Description
-🔐 Secure login	Session regeneration (session_regenerate_id) on every login
-📝 Self-registration	Profile image upload with live preview
-👁️ Password toggle	Eye icon on all password fields
-✅ Real-time validation	Password match check (≥ 8 characters)
-🎨 Welcome popup	Animated success popup before redirect
-❌ Error popup	Animated auto-dismiss on invalid credentials
-🛡️ Police-themed UI	Responsive layout with information side panels
-👮 Admin Panel
-Feature	Description
-🔐 Separate admin login	Secure popups for success / failure
-📊 Live dashboard	Total / Accepted / Pending / Rejected counters
-📁 Report cards	Full civilian complaint details in card layout
-✔️ Accept / Reject	Rejection requires a written reason (modal)
-📈 Crime analytics	Animated bar charts grouped by category & district
-🐞 Bug reporting	Built-in form with validation + DB logging
-📱 Responsive sidebar	Collapses to icons on mobile
-🔄 Auto-refresh	header("Location: ...") after every action
-🛠 Tech Stack
-<div align="center">
-Layer	Technology
-Backend	PHP 7.4+ / 8.x
-Database	MySQL / MariaDB
-Frontend	HTML5 · CSS3 (custom) · Vanilla JavaScript
-Icons	Font Awesome 6
-Fonts	Google Fonts — Inter
-Server	Apache (XAMPP / WAMP / LAMP)
-</div>
-⚠️ No frameworks, no Composer — 100% procedural PHP with mysqli.
-
-📂 Project Structure
-text
+```text
 Online-Police-System/
 │
-├── 📁 User_panel/
+├── User_panel/
 │   │
-│   ├── 📄 index.php           ← User login page
-│   ├── 🎨 style.css           ← Login styles + welcome/error popups
-│   ├── ⚙️  script.js          ← Password toggle, validation, popups
-│   ├── 📁 uplodes/            ← Uploaded profile images
-│   ├── 📄 README.md           ← This file
+│   ├── index.php
+│   ├── style.css
+│   ├── script.js
 │   │
-│   ├── 📁 home/
-│   │   ├── 📄 home.php        ← User dashboard (post-login)
-│   │   ├── 🎨 home.css
-│   │   └── ⚙️  home.js
+│   ├── uplodes/
 │   │
-│   └── 📁 register/
-│       ├── 📄 register.php    ← User registration form
-│       ├── 🎨 register.css    ← Registration styles + popup modal
-│       └── ⚙️  register.js    ← Live preview, password match, validation
+│   ├── README.md
+│   │
+│   ├── home/
+│   │   ├── home.php
+│   │   ├── home.css
+│   │   └── home.js
+│   │
+│   └── register/
+│       ├── register.php
+│       ├── register.css
+│       └── register.js
 │
-├── 📁 Admin_panel/
+├── Admin_panel/
 │   │
-│   ├── 📄 index.php           ← Admin login page
-│   ├── 🎨 style.css           ← Admin login styles
-│   ├── ⚙️  script.js          ← Success/error popup logic
+│   ├── index.php
+│   ├── style.css
+│   ├── script.js
 │   │
-│   └── 📁 home_page/
-│       ├── 📄 home.php        ← Admin dashboard (reports, stats, bug form)
-│       ├── 🎨 home.css        ← Dashboard styles (cards, charts, modal)
-│       └── ⚙️  home.js        ← Nav scroll, reject modal, bug validation
+│   └── home_page/
+│       ├── home.php
+│       ├── home.css
+│       └── home.js
 │
-└── 📄 README.md
-🗄 Database Setup
-<details> <summary><strong>Click to view full SQL schema</strong></summary>
-1️⃣ civilians_data — Registered Citizens
-sql
-CREATE TABLE civilians_data (
-    id INT AUTO_INCREMENT PRIMARY KEY,
-    user_id VARCHAR(50) NOT NULL UNIQUE,
-    full_name VARCHAR(120) NOT NULL,
-    phone VARCHAR(20) NOT NULL,
-    u_password VARCHAR(255) NOT NULL,
-    c_password VARCHAR(255) NOT NULL,
-    user_image VARCHAR(255) DEFAULT NULL,
-    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+└── README.md
+```
+
+### 📄 Important Files
+
+| File | Responsibility |
+|:---|:---|
+| `User_panel/index.php` | User login and authentication |
+| `User_panel/register/register.php` | New user registration |
+| `User_panel/home/home.php` | User dashboard |
+| `Admin_panel/index.php` | Administrator login |
+| `Admin_panel/home_page/home.php` | Admin dashboard and complaint management |
+| `style.css` | Login page styling |
+| `home.css` | Dashboard styling |
+| `script.js` | Login page interactions |
+| `home.js` | Dashboard interactions |
+
+---
+
+## 🗄️ Database Setup
+
+The application uses **MySQL** to store user information, complaints, and administrative data.
+
+### Database Name
+
+```sql
+CREATE DATABASE OPS;
+```
+
+### Main Database Tables
+
+| Table Name | Purpose |
+|:---|:---|
+| `civilians_data` | Stores registered citizen information. |
+| `dairy_data` | Stores submitted complaints and their details. |
+
+**Note:** The complaint table is named `dairy_data` in the current project implementation.
+
+### Database Configuration
+
+Update your database connection settings in the PHP database connection file.
+
+Example:
+
+```php
+<?php
+
+$host = "localhost";
+$username = "root";
+$password = "";
+$database = "OPS";
+
+$conn = mysqli_connect(
+    $host,
+    $username,
+    $password,
+    $database
 );
-2️⃣ dairy_data — Complaints / Reports
-sql
-CREATE TABLE dairy_data (
-    id INT AUTO_INCREMENT PRIMARY KEY,
-    civilians_id INT NOT NULL,
-    Full_Name VARCHAR(120),
-    Contact_Number VARCHAR(20),
-    Email_Address VARCHAR(120),
-    Identification_Type VARCHAR(50),
-    ID_Number VARCHAR(60),
-    Relationship_Incident VARCHAR(80),
-    Present_Address TEXT,
-    District VARCHAR(80),
-    Police_Station VARCHAR(120),
-    Type_Report VARCHAR(80),
-    Date_Time DATETIME,
-    Place VARCHAR(150),
-    Subject VARCHAR(200),
-    Description TEXT,
-    accept VARCHAR(20) DEFAULT NULL,
-    regecter_reason TEXT DEFAULT NULL,
-    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
-);
-3️⃣ bug_reports — Admin Bug Submissions
-sql
-CREATE TABLE bug_reports (
-    id INT AUTO_INCREMENT PRIMARY KEY,
-    title VARCHAR(200) NOT NULL,
-    category VARCHAR(50) NOT NULL,
-    severity VARCHAR(20) NOT NULL,
-    description TEXT NOT NULL,
-    email VARCHAR(150) DEFAULT NULL,
-    status VARCHAR(20) DEFAULT 'open',
-    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
-);
-</details>
-⚙️ Installation & Configuration
-Step 1 — Install XAMPP
-Download from apachefriends.org → install → start Apache + MySQL (both must be green ✅).
 
-Step 2 — Copy the Project
-bash
-# Windows
-C:\xampp\htdocs\Online-Police-System\
+if (!$conn) {
+    die("Database Connection Failed: " . mysqli_connect_error());
+}
 
-# macOS
-/Applications/XAMPP/htdocs/Online-Police-System/
+?>
+```
 
-# Linux
-/opt/lampp/htdocs/Online-Police-System/
-Step 3 — Create the Database
-Open http://localhost/phpmyadmin
+Make sure your database name, username, password, and table structures match your local configuration.
 
-Click New → name it OPS → Create
+---
 
-Select OPS → SQL tab → paste the schema above → Go
+## ⚙️ Installation & Configuration
 
-Step 4 — Configure Database Credentials
-Edit all three PHP files (User_panel/index.php, Admin_panel/index.php, Admin_panel/home_page/home.php):
+Follow these steps to run the project locally.
 
-php
-$servername  = "localhost";
-$username    = "root";
-$db_password = "";        // ← blank in default XAMPP
-$db_name     = "OPS";
-Step 5 — Create the Uploads Folder
-bash
-mkdir User_panel/uplodes
-chmod 755 User_panel/uplodes        # Linux / macOS
-🚀 Running the Application
-Page	URL
-🧑‍💼 Citizen Login	http://localhost/Online-Police-System/User_panel/index.php
-📝 Register	http://localhost/Online-Police-System/User_panel/register/register.php
-👮 Admin Login	http://localhost/Online-Police-System/Admin_panel/index.php
-📊 Admin Dashboard	http://localhost/Online-Police-System/Admin_panel/home_page/home.php
-🧭 Module Walkthroughs
-<details> <summary><strong>🧑‍💼 User Panel — click to expand</strong></summary>
-Flow
-text
-Register → Login → Welcome Popup → Dashboard → File Complaint → Logout
-Steps
-Register — Fill User ID, Name, Phone, Password, Confirm Password, upload image → submit
+### Step 1: Install XAMPP
 
-Success popup (with confetti 🎊) → auto-redirect to login
+Download and install XAMPP.
 
-Login — Enter User ID + password → welcome popup → dashboard
+https://www.apachefriends.org/
 
-Dashboard — View your reports, file new complaints, track status
+### Step 2: Clone the Repository
 
-</details><details> <summary><strong>👮 Admin Panel — click to expand</strong></summary>
-Flow
-text
-Admin Login → Success Popup → Dashboard → Review Reports → Accept/Reject → Logout
-Dashboard Sections
-Section	What You Can Do
-🏠 Home Hero	See quick stats (total / accepted / pending / rejected)
-📁 All Reports	Browse all citizen complaints as cards
-✅ Accept	Mark a report as accepted
-❌ Reject	Reject with a written reason (≥ 5 characters)
-📈 Crime Rate	View bar charts grouped by category and district
-ℹ️ About	System information and mission statement
-🐞 Bug Report	Submit bug reports with validation
-</details>
-🔑 Default Credentials
-Role	User ID	Password
-👮 Admin	Shovan	1234
-⚠️ Change these immediately in any real deployment.
+Open your terminal and execute:
 
+```bash
+git clone https://github.com/Shovanmondal63/The-Digital-Police-Portal.git
+```
+
+### Step 3: Move the Project
+
+Move the downloaded project folder into the XAMPP `htdocs` directory.
+
+```text
+C:/xampp/htdocs/Online-Police-System/
+```
+
+### Step 4: Start Apache and MySQL
+
+Open XAMPP Control Panel and start:
+
+- Apache
+- MySQL
+
+### Step 5: Create the Database
+
+1. Open `http://localhost/phpmyadmin/`.
+2. Create a database named `OPS`.
+3. Import your project SQL file if available.
+4. Ensure all required tables and columns are created.
+
+### Step 6: Configure Database Connection
+
+Update the database credentials in your PHP connection file.
+
+### Step 7: Run the Application
+
+Open your browser and visit the following URLs.
+
+**User Panel:**
+
+```text
+http://localhost/Online-Police-System/User_panel/
+```
+
+**Admin Panel:**
+
+```text
+http://localhost/Online-Police-System/Admin_panel/
+```
+
+---
+
+## 🚀 Module Walkthrough
+
+### 1. User Panel
+
+The User Panel allows citizens to access the complaint registration system.
+
+**Registration Process**
+
+1. Open the registration page.
+2. Enter the required personal information.
+3. Upload a profile image.
+4. Create and confirm a password.
+5. Submit the registration form.
+
+**Login Process**
+
+1. Enter your registered User ID.
+2. Enter your password.
+3. Complete authentication.
+4. Access the user dashboard.
+
+**Complaint Registration**
+
+Citizens can submit complaint information, including:
+
+- Full Name
+- Contact Information
+- District
+- Police Station
+- Type of Complaint
+- Date and Time
+- Incident Location
+- Subject
+- Detailed Description
+
+### 2. Admin Panel
+
+The Admin Panel provides administrative control over submitted complaints.
+
+**Dashboard Features**
+
+- View total complaints.
+- View accepted complaints.
+- View pending complaints.
+- View rejected complaints.
+- Access complaint details.
+- Accept or reject complaints.
+- Provide rejection reasons.
+- Analyze complaint statistics.
+
+---
+
+## 🔐 Security Notes
+
+Security is an important consideration for applications handling citizen information.
+
+The project includes session management and authentication-related functionality.
+
+For a production-ready deployment, the following security measures should also be implemented and verified:
+
+- Use `password_hash()` and `password_verify()` for password storage and verification.
+- Use prepared statements to prevent SQL injection.
+- Regenerate session IDs after successful login.
+- Validate uploaded image types, sizes, and file contents.
+- Protect administrative actions against CSRF attacks.
+- Enforce server-side authorization checks.
+- Use HTTPS for secure communication.
+- Avoid exposing database credentials or sensitive information in public repositories.
+
+> **Disclaimer:** This is an educational project. It should not be treated as an officially approved police complaint registration platform or used for real emergency reporting.
+
+---
+
+## ⚠️ Known Limitations & Future Improvements
+
+The project can be extended with additional functionality in future versions.
+
+| Feature | Description | Status |
+|:---|:---|:---|
+| Online User Registration | Citizen account creation | Implemented |
+| User Authentication | Login and session management | Implemented |
+| Complaint Submission | Digital complaint registration | Implemented |
+| Admin Dashboard | Complaint management | Implemented |
+| Accept / Reject System | Complaint decision management | Implemented |
+| Crime Analytics | Statistical visualizations | Implemented |
+| Email Notifications | Automatic status notifications | Planned |
+| Complaint Tracking ID | Unique complaint tracking system | Planned |
+| PDF Complaint Receipt | Downloadable complaint receipt | Planned |
+| Advanced Security | Additional production-level protections | Planned |
+
+---
+
+## 🐞 Troubleshooting
+
+**1. Database Connection Failed**
+
+- Check whether MySQL is running.
+- Verify database credentials.
+- Confirm that the `OPS` database exists.
+
+**2. Page Not Found (404 Error)**
+
+- Ensure Apache is running.
+- Check the project folder inside `htdocs`.
+- Verify the URL and folder names.
+
+**3. Images Are Not Displaying**
+
+- Check the image upload directory.
+- Verify the image file path.
+- Check folder permissions.
+
+**4. Login Not Working**
+
+- Verify that the user exists in the database.
+- Check the authentication query.
+- Verify password handling and session configuration.
+
+---
+
+## 👨‍💻 Developer
+
+**Shovan Mondal**
+
+BCA Student | Aspiring Software Developer
+
+Interested in:
+- PHP & MySQL Development
+- Java Programming
+- Data Structures & Algorithms
+- Object-Oriented Programming
+- Database Management Systems
+- Software Engineering
+
+GitHub: [@Shovanmondal63](https://github.com/Shovanmondal63)
+
+---
+
+## 🎓 Project Information
+
+| Details | Information |
+|:---|:---|
+| Project Name | Online Police System |
+| Project Type | Web-Based Application |
+| Backend | PHP |
+| Database | MySQL |
+| Architecture | Two-Module System |
+| Development Purpose | Academic & Learning Project |
+
+---
+
+## ⭐ Support
+
+If you find this project interesting or useful, consider giving the repository a ⭐ on GitHub.
+
+Your support is appreciated!
+
+---
+
+<p align="center">
+  <b>🚓 Online Police System</b>
+  <br>
+  <i>Making complaint registration more accessible through technology.</i>
+  <br><br>
+  Developed by <b>Shovan Mondal</b>
+</p>
